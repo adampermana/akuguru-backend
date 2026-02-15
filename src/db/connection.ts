@@ -1,6 +1,6 @@
-import { env } from 'bun';
 import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
+import env from '../helpers/env';
 import * as schema from './schema';
 
 // Create MySQL connection pool

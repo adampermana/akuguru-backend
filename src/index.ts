@@ -1,7 +1,7 @@
 import cors from '@elysiajs/cors';
 import serverTiming from '@elysiajs/server-timing';
-import { env } from 'bun';
 import { Elysia } from 'elysia';
+import env from './helpers/env';
 
 console.time('⌛ Startup Time');
 
@@ -22,7 +22,7 @@ const app = new Elysia()
   // .use(authRoutes)
   // .use(userRoutes)
   // .use(bookingRoutes)
-  .listen(env.SERVER_PORT || 3000, (server) => {
+  .listen(env.PORT || env.SERVER_PORT || 3000, (server) => {
     console.timeEnd("⌛ Startup Time");
     console.log(`🌱 NODE_ENV: ${env.NODE_ENV || "development"}`);
     console.log(`🍙 Bun Version: ${Bun.version}`);
